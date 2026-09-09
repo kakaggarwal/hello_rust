@@ -1,52 +1,38 @@
+use std::io;
+use chrono::Local;
+
+mod variables;
+
 const AUTHOR: &str = "Krishan Aggarwal";
 
 fn main() {
     // because the println ends with ! which means its a marco
-    println!("Hello, world!");
-
     println!("=============================================");
     println!("Name:     {}", AUTHOR); // Constant variable usage
     println!("Goal:     Become a Rust Systems Engineer");
     println!("Country:  Bharat");
+    println!("Start Date: {}, Today's Date: {}", "2026-08-05", Local::now().format("%Y-%m-%d"));
+    println!("=============================================");
+    println!();
+    println!("=============================================");
+    println!("Features & Concepts Covered:");
+    println!("1. Variables");
+    println!("2. Value Moving");
     println!("=============================================");
 
-    variables();
-    value_moving();
-}
+    let mut input = String::new();
+    println!("Enter option to demonstrate:");
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line");
 
-fn variables() {
-    // let age = 33;
-    // age = 34;
-    // The above code results in error as we cannot assign again to mutable variable.
+    let selection: i32 = input.trim().parse().expect("Please type a number!");
 
-    let mut age = 33;
-    println!("Age: {}", age);
-    age = 34;
-    println!("Age: {}", age);
-    // The above code works because we have declared the variable as mutable using mut keyword.
-
-    let mail_count = 0;
-    println!("Mail Count: {}", mail_count);
-    let mail_count = mail_count + 1;
-    println!("Mail Count: {}", mail_count);
-    // This is an example of shadowing. We have declared a new variable with the same name as the previous one. 
-    // The previous variable is shadowed by the new one.
-
-    let name: String = String::from("Alice");
-    let age: i32 = 30;
-    let salary: f64 = 50000.0;
-    let is_active: bool = true;
-    let grade: char = 'A';
-
-    let employee = (name, age, salary, is_active, grade);
-    let marks = [90, 85, 95];
-
-    // println!("Name: {}", name);
-    // Above code will not compile as name variable has been moved to employee tuple. We can access the name variable from the employee tuple.
-    println!("Name: {}", employee.0);
-    println!("Age: {}", employee.1);
-    println!("Marks: {}", marks[1]);
-
+    match selection {
+        1 => variables::variables(),
+        2 => value_moving(),
+        _ => println!("Invalid option selected!"),
+    }
 }
 
 fn value_moving() {
