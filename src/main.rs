@@ -1,8 +1,8 @@
-use std::io;
 use chrono::Local;
+use std::io;
 
-mod variables;
 mod control_flow;
+mod variables;
 
 const AUTHOR: &str = "Krishan Aggarwal";
 
@@ -12,7 +12,11 @@ fn main() {
     println!("Name:     {}", AUTHOR); // Constant variable usage
     println!("Goal:     Become a Rust Systems Engineer");
     println!("Country:  Bharat");
-    println!("Start Date: {}, Today's Date: {}", "2026-08-05", Local::now().format("%Y-%m-%d"));
+    println!(
+        "Start Date: {}, Today's Date: {}",
+        "2026-08-05",
+        Local::now().format("%Y-%m-%d")
+    );
     println!("=============================================");
     println!();
     println!("=============================================");

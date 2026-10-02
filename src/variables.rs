@@ -13,7 +13,7 @@ pub fn variables() {
     println!("Mail Count: {}", mail_count);
     let mail_count = mail_count + 1;
     println!("Mail Count: {}", mail_count);
-    // This is an example of shadowing. We have declared a new variable with the same name as the previous one. 
+    // This is an example of shadowing. We have declared a new variable with the same name as the previous one.
     // The previous variable is shadowed by the new one.
 
     let name: String = String::from("Alice");
@@ -30,5 +30,4 @@ pub fn variables() {
     println!("Name: {}", employee.0);
     println!("Age: {}", employee.1);
     println!("Marks: {}", marks[1]);
-
 }

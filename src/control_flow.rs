@@ -11,18 +11,23 @@ pub fn controlflow() {
     let mut f_count = 0;
 
     for mark in marks {
-        let grade = if mark > 90 {
-            a_count += 1;
-            "A"
-        } else if mark > 75 {
-            b_count += 1;
-            "B"
-        } else if mark > 60 {
-            c_count += 1;
-            "C"
-        } else {
-            f_count += 1;
-            "F"
+        let grade = match mark {
+            91.. => {
+                a_count += 1;
+                "A"
+            }
+            76..=90 => {
+                b_count += 1;
+                "B"
+            }
+            61..=75 => {
+                c_count += 1;
+                "C"
+            }
+            _ => {
+                f_count += 1;
+                "F"
+            }
         };
 
         println!("Mark: {}, Grade: {}", mark, grade);
@@ -36,13 +41,13 @@ pub fn controlflow() {
     println!("For Loop Demonstration Completed.");
     println!("---------------------------");
     println!("Match statement demonstration:");
-    
+
     match a_count {
         0 => println!("No Toppers"),
         1 => println!("One Topper"),
         _ => println!("Many Toppers"),
     }
-    
+
     println!("Match statement demonstration completed.");
     println!("---------------------------");
     println!("If statement demonstration:");
@@ -52,7 +57,7 @@ pub fn controlflow() {
     } else {
         "Some failed"
     };
-    
+
     println!("Overall Result: {}", overall_result);
 
     println!("If statement demonstration completed.");
