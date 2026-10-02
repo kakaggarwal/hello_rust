@@ -1,6 +1,6 @@
 pub fn controlflow() {
     println!("Control Flow Demonstration:");
-    println!("---------------------------");
+    println!("================================");
     println!("For loop demonstration:");
 
     let marks = [95, 72, 45, 88, 61];
@@ -58,6 +58,22 @@ pub fn controlflow() {
     println!("If statement demonstration completed.");
     println!("---------------------------");
     println!("While loop demonstration:");
-    
+
+    let mut count = 3;
+    while count > 0 {
+        println!("Count: {}", count);
+        count -= 1;
+    }
+
+    println!("While loop demonstration completed.");
+    println!("---------------------------");
+    println!("Loop demonstration:");
+    let bonus = loop {
+        break 5;
+    };
+
+    println!("Bonus Marks: {}", bonus);
+    println!("Loop demonstration completed.");
+    println!("================================");
     println!("Control Flow Demonstration Completed.");
 }
