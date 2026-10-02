@@ -2,6 +2,7 @@ use std::io;
 use chrono::Local;
 
 mod variables;
+mod control_flow;
 
 const AUTHOR: &str = "Krishan Aggarwal";
 
@@ -18,6 +19,7 @@ fn main() {
     println!("Features & Concepts Covered:");
     println!("1. Variables");
     println!("2. Value Moving");
+    println!("3. Control Flow");
     println!("=============================================");
 
     let mut input = String::new();
@@ -31,6 +33,7 @@ fn main() {
     match selection {
         1 => variables::variables(),
         2 => value_moving(),
+        3 => control_flow::controlflow(),
         _ => println!("Invalid option selected!"),
     }
 }
